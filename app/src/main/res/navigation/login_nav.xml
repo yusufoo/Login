@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav"
+    app:startDestination="@id/joinFragment2">
+    <fragment
+        android:id="@+id/joinFragment2"
+        android:name="com.redGuuner.login.View.Fragments.JoinFragment"
+        android:label="fragment_join"
+        tools:layout="@layout/fragment_join" >
+        <action
+            android:id="@+id/action_joinFragment2_to_loginFragment"
+            app:destination="@id/loginFragment"
+            />
+        <action
+            android:id="@+id/action_joinFragment2_to_insertInformationFragment"
+            app:destination="@id/insertInformationFragment"
+            app:popUpTo="@id/joinFragment2"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_joinFragment2_to_allInformation"
+            app:destination="@id/allInformation"
+            app:popUpTo="@id/joinFragment2"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/restPasswordFragment"
+        android:name="com.redGuuner.login.View.Fragments.RestPasswordFragment"
+        android:label="fragment_rest_password"
+        tools:layout="@layout/fragment_rest_password" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.redGuuner.login.View.Fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_restPasswordFragment"
+            app:destination="@id/restPasswordFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_allInformation"
+            app:destination="@id/allInformation"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/insertInformationFragment"
+        android:name="com.redGuuner.login.View.Fragments.InsertInformationFragment"
+        android:label="fragment_insert_information"
+        tools:layout="@layout/fragment_insert_information" >
+        <action
+            android:id="@+id/action_insertInformationFragment_to_allInformation"
+            app:destination="@id/allInformation"
+            app:popUpTo="@id/insertInformationFragment"
+            app:popUpToInclusive="true"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/allInformation"
+        android:name="com.redGuuner.login.View.Fragments.ReadInformationFragment"
+        android:label="fragment_all_information"
+        tools:layout="@layout/fragment_all_information" >
+        <action
+            android:id="@+id/action_allInformation_to_insertInformationFragment"
+            app:destination="@id/insertInformationFragment"
+            app:popUpTo="@id/allInformation"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_allInformation_to_editInformationFragment"
+            app:destination="@id/editInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editInformationFragment"
+        android:name="com.redGuuner.login.View.Fragments.EditInformationFragment"
+        android:label="fragment_edit_information"
+        tools:layout="@layout/fragment_edit_information" />
+</navigation>
